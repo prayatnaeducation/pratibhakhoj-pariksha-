@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>प्रयत्न प्रतिभा खोज परीक्षा | Register Now</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a192f; /* Deep Navy */
+            --primary-light: #172a45;
+            --accent: #f59e0b; /* Premium Gold/Orange */
+            --accent-hover: #d97706;
+            --text-dark: #1e293b;
+            --text-light: #f8fafc;
+            --bg-gray: #f1f5f9;
+            --whatsapp: #25D366;
+            --whatsapp-hover: #1da851;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-gray);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* --- Navbar --- */
+        nav {
+            background-color: var(--primary);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .logo h1 {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-btn {
+            background-color: var(--accent);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--text-light);
+            padding: 4rem 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+            min-height: 80vh;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--accent);
+        }
+
+        .hero h2 {
+            font-size: 3.2rem;
+            line-height: 1.2;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-quote {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent);
+            padding-left: 1rem;
+        }
+
+        .hero-details {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .detail-item span:first-child {
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .detail-item span:last-child {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #fff;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);
+        }
+
+        .cta-btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(245, 158, 11, 0.4);
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 4px solid rgba(255,255,255,0.1);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image img:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        /* --- Sections Common --- */
+        section {
+            padding: 5rem 5%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: #64748b;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- Features & Syllabus Grid --- */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #fff;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-bottom: 4px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+            border-bottom: 4px solid var(--accent);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card h4 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .card p, .card ul {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .card ul {
+            padding-left: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        /* --- Registration Form --- */
+        .registration-section {
+            background-color: var(--primary);
+            color: #fff;
+        }
+
+        .registration-section .section-header h3 {
+            color: #fff;
+        }
+
+        .registration-section .section-header p {
+            color: #cbd5e1;
+        }
+
+        .form-container {
+            background: #fff;
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+            color: var(--text-dark);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            background-color: #f8fafc;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--accent);
+            background-color: #fff;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: var(--whatsapp);
+            color: #fff;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--whatsapp-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(37, 211, 102, 0.3);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #020617;
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem 5%;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 2rem;
+            }
+            .hero-quote {
+                border-left: none;
+                padding-left: 0;
+            }
+            .hero-details {
+                justify-content: center;
+            }
+            .hero-image img {
+                transform: none;
+                margin-top: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            .form-container {
+                padding: 2rem;
+            }
+            .section-header h3 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <h1>प्रयत्न <span>क्लासेज</span></h1>
+        </div>
+        <a href="#register" class="nav-btn">अभी रजिस्टर करें</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">🎁 100% नि:शुल्क रजिस्ट्रेशन + निश्चित उपहार</div>
+            <h2>प्रतिभा खोज परीक्षा</h2>
+            <div class="hero-quote">
+                "हर गाँव में एक प्रतिभा है। बस उसे एक मौका चाहिए।"
+            </div>
+            
+            <div class="hero-details">
+                <div class="detail-item">
+                    <span>कक्षा</span>
+                    <span>10वीं (RBSE)</span>
+                </div>
+                <div class="detail-item">
+                    <span>परीक्षा तिथि</span>
+                    <span>17 सितम्बर 2026</span>
+                </div>
+                <div class="detail-item">
+                    <span>मुख्य पुरस्कार</span>
+                    <span>फीस में 80% तक छूट</span>
+                </div>
+            </div>
+
+            <a href="#register" class="cta-btn">अपनी सीट पक्की करें →</a>
+        </div>
+        <div class="hero-image">
+            <!-- Updated Image Source -->
+            <img src="image_a0d6bc.jpg" alt="हर गाँव में एक प्रतिभा है - प्रयत्न क्लासेज">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section style="background-color: var(--bg-gray);">
+        <div class="section-header">
+            <h3>हमारी 10वीं बोर्ड कोर्स की सुविधाएँ</h3>
+            <p>हम केवल पढ़ाते नहीं, बल्कि बोर्ड परीक्षा में टॉप करने के लिए एक मजबूत नींव तैयार करते हैं।</p>
+        </div>
+        <div class="grid-container">
+            <div class="card">
+                <div class="card-icon">👨‍🏫</div>
+                <h4>गुणवत्तापूर्ण शिक्षण</h4>
+                <p>अनुभवी शिक्षकों द्वारा श्रेष्ठ और आधुनिक तरीके से पढ़ाई, ताकि हर कांसेप्ट स्पष्ट हो।</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h4>प्रिंटेड नोट्स</h4>
+                <p>परीक्षा के लिए विशेष रूप से तैयार की गई आसान और सटीक प्रिंटेड अध्ययन सामग्री।</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">⏱️</div>
+                <h4>साप्ताहिक टेस्ट</h4>
+                <p>नियमित अभ्यास के लिए हर हफ्ते बोर्ड परीक्षा पैटर्न पर आधारित टेस्ट।</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">📈</div>
+                <h4>प्रगति रिपोर्ट</h4>
+                <p>छात्रों के प्रदर्शन का निरंतर मूल्यांकन और माता-पिता को नियमित रिपोर्ट।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Syllabus Section -->
+    <section style="background-color: #fff;">
+        <div class="section-header">
+            <h3>परीक्षा का पाठ्यक्रम (Syllabus)</h3>
+            <p>तैयारी शुरू करने से पहले जान लें कि परीक्षा में क्या पूछा जाएगा।</p>
+        </div>
+        <div class="grid-container">
+            <div class="card">
+                <h4>📝 1. हिन्दी</h4>
+                <ul>
+                    <li>RBSE कक्षा 10 हिन्दी का प्रथम पाठ</li>
+                    <li>अनुच्छेद / लेख लेखन</li>
+                    <li>व्याकरण: संधि, समास, पर्यायवाची-विलोम, मुहावरे एवं वाक्य शुद्धि</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4>🔠 2. English</h4>
+                <ul>
+                    <li>RBSE Class 10 English First Chapter</li>
+                    <li>Application & Paragraph Writing</li>
+                    <li>Unseen Passage & Comprehension</li>
+                    <li>Grammar: Tenses, Articles & Prepositions</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4>➗ 3. गणित (Maths)</h4>
+                <p style="font-weight: 600; font-size:0.85rem; color:var(--accent); margin-bottom:5px;">प्रथम 3 अध्यायों की मूलभूत अवधारणाएँ:</p>
+                <ul>
+                    <li>वास्तविक संख्याएँ</li>
+                    <li>बहुपद</li>
+                    <li>दो चर वाले रैखिक समीकरण युग्म</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h4>🔬 4. विज्ञान (Science)</h4>
+                <ul>
+                    <li>रासायनिक अभिक्रियाएँ एवं समीकरण</li>
+                    <li>कार्बन एवं उसके यौगिक</li>
+                    <li>जैव प्रक्रम</li>
+                </ul>
+            </div>
+            <div class="card" style="grid-column: 1 / -1; max-width: 600px; margin: 0 auto; width: 100%;">
+                <h4>🌍 5. सामाजिक विज्ञान (SST)</h4>
+                <ul>
+                    <li>इतिहास, भूगोल, नागरिक शास्त्र, अर्थशास्त्र – (सभी का प्रथम अध्याय)</li>
+                    <li>सामान्य जागरूकता एवं राजस्थान सामान्य ज्ञान</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section class="registration-section" id="register">
+        <div class="section-header">
+            <h3>आज ही निःशुल्क रजिस्टर करें</h3>
+            <p>अपनी जानकारी भरें और सीधे WhatsApp के माध्यम से अपना रजिस्ट्रेशन कन्फर्म करें।</p>
+        </div>
+        <div class="form-container">
+            <form id="whatsappForm" onsubmit="sendToWhatsApp(event)">
+                <div class="form-group">
+                    <label for="studentName">विद्यार्थी का पूरा नाम *</label>
+                    <input type="text" id="studentName" placeholder="अपना नाम दर्ज करें" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentNumber">मोबाइल नंबर (WhatsApp) *</label>
+                    <input type="tel" id="studentNumber" placeholder="10 अंकों का WhatsApp नंबर" pattern="[0-9]{10}" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentClass">कक्षा *</label>
+                    <input type="text" id="studentClass" value="10वीं (RBSE)" readonly style="color: #64748b;">
+                </div>
+                <div class="form-group">
+                    <label for="schoolName">विद्यालय का नाम *</label>
+                    <input type="text" id="schoolName" placeholder="अपने स्कूल का नाम दर्ज करें" required>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.88-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    WhatsApp पर रजिस्ट्रेशन भेजें
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="highlight">प्रयत्न हमारा • सफलता आपकी</p>
+        <p><strong>पता:</strong> त्रिवेणी चौराहा, मांडलगढ़, भीलवाड़ा (राजस्थान)</p>
+        <p><strong>सम्पर्क:</strong> 9588818840</p>
+        <p style="margin-top: 1.5rem; font-size: 0.8rem; color: #475569;">© 2026 Prayatna Classes. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function sendToWhatsApp(event) {
+            event.preventDefault(); 
+            
+            const name = document.getElementById('studentName').value;
+            const number = document.getElementById('studentNumber').value;
+            const className = document.getElementById('studentClass').value;
+            const school = document.getElementById('schoolName').value;
+            
+            const targetPhone = "919588818840";
+            
+            const message = `*प्रयत्न प्रतिभा खोज परीक्षा - Registration*\n\nनमस्ते, मैं परीक्षा के लिए पंजीकरण करना चाहता/चाहती हूँ। मेरे विवरण नीचे दिए गए हैं:\n\n*नाम:* ${name}\n*कक्षा:* ${className}\n*स्कूल:* ${school}\n*मोबाइल:* ${number}\n\nकृपया मेरा रजिस्ट्रेशन कन्फर्म करें। धन्यवाद!`;
+            
+            const whatsappURL = `https://wa.me/${targetPhone}?text=${encodeURIComponent(message)}`;
+            
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
+</body>
+</html>
